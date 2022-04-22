@@ -16,4 +16,31 @@ public class MarkdownParseTest {
         String file = Files.readString(filepath);
         assertEquals(expected, MarkdownParse.getLinks(file));
     }
+
+    @Test
+    public void mdTest2() throws Exception{
+        List expected = List.of();
+
+        Path filepath = Path.of("test-file1.md");
+        String file = Files.readString(filepath);
+        assertEquals(expected, MarkdownParse.getLinks(file));
+    }
+
+    @Test
+    public void mdTest3() throws Exception{
+        List expected = List.of();
+
+        Path filepath = Path.of("test-file2.md");
+        String file = Files.readString(filepath);
+        assertEquals(expected, MarkdownParse.getLinks(file));
+    }
+
+    @Test
+    public void mdTest4() throws Exception{
+        List expected = List.of("https://www.helloworldstudio.org/");
+
+        Path filepath = Path.of("test-file3.md");
+        String file = Files.readString(filepath);
+        assertEquals(expected, MarkdownParse.getLinks(file));
+    }
 }
