@@ -14,14 +14,31 @@ public class MarkdownParse {
         while(currentIndex < markdown.length()) {
             int openBracket = markdown.indexOf("[", currentIndex);
 
-            //Checks that a link exists, if not, return what is currently in toReturn
+            //Checks that a an open bracket exists, if not, return what is currently in toReturn
             if(openBracket < 0){
                 return toReturn;
             }
 
             int closeBracket = markdown.indexOf("]", openBracket);
+
+            //Checks that a an close bracket exists, if not, return what is currently in toReturn
+            if(closeBracket < 0){
+                return toReturn;
+            }
+
             int openParen = markdown.indexOf("(", closeBracket);
+
+            //Checks that a an open parentheses exists, if not, return what is currently in toReturn
+            if(openParen < 0){
+                return toReturn;
+            }
+
             int closeParen = markdown.indexOf(")", openParen);
+
+            //Checks that a an close parentheses exists, if not, return what is currently in toReturn
+            if(closeParen < 0){
+                return toReturn;
+            }
 
             if(openBracket == 0 || (openBracket > 0 && markdown.charAt(openBracket-1) != '!')){
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
