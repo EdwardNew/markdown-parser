@@ -40,7 +40,8 @@ public class MarkdownParse {
                 return toReturn;
             }
 
-            if(openBracket == 0 || (openBracket > 0 && markdown.charAt(openBracket-1) != '!')){
+            if(openBracket == 0 || (openBracket > 0 && markdown.charAt(openBracket-1) != '!')
+                                                            && (closeBracket + 1 == openParen)){
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
             }
 
