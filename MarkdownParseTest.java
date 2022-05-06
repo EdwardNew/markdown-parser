@@ -36,24 +36,6 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void myMdTest4() throws Exception{
-        List expected = List.of();
-
-        Path filepath = Path.of("myTest-file3.md");
-        String file = Files.readString(filepath);
-        assertEquals(expected, MarkdownParse.getLinks(file));
-    }
-
-    @Test
-    public void myMdTest5() throws Exception{
-        List expected = List.of();
-
-        Path filepath = Path.of("myTest-file4.md");
-        String file = Files.readString(filepath);
-        assertEquals(expected, MarkdownParse.getLinks(file));
-    }
-
-    @Test
     public void mdTest1() throws Exception{
         List expected = List.of("https://something.com", "some-thing.html");
 
